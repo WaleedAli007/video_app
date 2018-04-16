@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 02, 2018 at 09:07 AM
+-- Generation Time: Apr 17, 2018 at 01:32 AM
 -- Server version: 5.7.21-0ubuntu0.16.04.1
--- PHP Version: 7.0.28-0ubuntu0.16.04.1
+-- PHP Version: 7.2.4-1+ubuntu16.04.1+deb.sury.org+1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -699,6 +699,47 @@ INSERT INTO `tbl_movies` (`movies_id`, `movies_cover`, `movies_title`, `movies_y
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_movies_social_media_links`
+--
+
+CREATE TABLE `tbl_movies_social_media_links` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `movies_id` mediumint(8) NOT NULL,
+  `facebook_link` text,
+  `twitter_link` text,
+  `instagram_link` text
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_movies_social_media_links`
+--
+
+INSERT INTO `tbl_movies_social_media_links` (`id`, `movies_id`, `facebook_link`, `twitter_link`, `instagram_link`) VALUES
+(1, 1, 'https://www.facebook.com/guardiansofthegalaxy', 'https://twitter.com/Guardians', NULL),
+(2, 2, 'https://www.facebook.com/Dunkirkmovie', 'https://twitter.com/dunkirkmovie', 'https://www.instagram.com/dunkirkmovie/'),
+(3, 3, 'https://www.facebook.com/TheWolverineMovie/?brand_redir=393442714073793', 'https://twitter.com/wolverinemovie', NULL),
+(4, 4, 'https://www.facebook.com/OKJAnetflix', 'https://twitter.com/okjanetflix', NULL),
+(5, 5, 'https://www.facebook.com/DisneyBeautyAndTheBeast', 'https://twitter.com/beourguest', 'https://www.instagram.com/beautyandthebeast/'),
+(6, 6, 'https://www.facebook.com/HacksawRidge/?brand_redir=1316020801764836', 'https://twitter.com/hacksawridge', NULL),
+(7, 7, 'https://www.facebook.com/DeadpoolMovie', 'https://twitter.com/deadpoolmovie', NULL),
+(8, 8, 'https://www.facebook.com/ArrivalMovie/?brand_redir=1637956449848563', 'https://twitter.com/arrivalmovie', 'https://www.instagram.com/ArrivalMovie/'),
+(9, 9, 'https://www.facebook.com/EddieTheEagleMovie', 'https://twitter.com/eddieeaglemovie', NULL),
+(10, 10, 'https://www.facebook.com/DreamWorksTrolls/?brand_redir=1046178062071204', 'https://twitter.com/trolls', 'https://www.instagram.com/trolls/'),
+(11, 11, 'https://www.facebook.com/RevenantMovie', 'https://twitter.com/revenantmovie', NULL),
+(12, 12, 'https://www.facebook.com/BrooklynMovie', NULL, NULL),
+(13, 13, 'https://www.facebook.com/TheWalkMovie', 'https://twitter.com/thewalkmovie', NULL),
+(14, 14, NULL, NULL, NULL),
+(15, 15, 'https://www.facebook.com/StarWars', 'https://twitter.com/starwars', 'https://www.instagram.com/starwars/'),
+(16, 16, 'https://www.facebook.com/WhiplashMovie', NULL, NULL),
+(17, 17, 'https://www.facebook.com/guardiansofthegalaxy', NULL, NULL),
+(18, 18, 'https://www.facebook.com/DonJonMovie', 'https://twitter.com/donjonmovie', NULL),
+(19, 19, 'https://www.facebook.com/gravitymovie', NULL, NULL),
+(20, 20, 'https://www.facebook.com/LifeofPi', NULL, NULL),
+(21, 21, NULL, 'https://twitter.com/silver_linings', NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_mov_cast`
 --
 
@@ -1100,6 +1141,13 @@ ALTER TABLE `tbl_movies`
   ADD PRIMARY KEY (`movies_id`);
 
 --
+-- Indexes for table `tbl_movies_social_media_links`
+--
+ALTER TABLE `tbl_movies_social_media_links`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `id` (`id`);
+
+--
 -- Indexes for table `tbl_mov_cast`
 --
 ALTER TABLE `tbl_mov_cast`
@@ -1197,6 +1245,11 @@ ALTER TABLE `tbl_language`
 --
 ALTER TABLE `tbl_movies`
   MODIFY `movies_id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+--
+-- AUTO_INCREMENT for table `tbl_movies_social_media_links`
+--
+ALTER TABLE `tbl_movies_social_media_links`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 --
 -- AUTO_INCREMENT for table `tbl_mov_cast`
 --
